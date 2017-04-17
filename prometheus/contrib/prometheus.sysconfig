@@ -107,4 +107,4 @@
 #  -web.user-assets=""
 #      Path to static asset directory, available at /user.
 
-ARGS="-config.file=/etc/prometheus/prometheus.yaml -web.console.libraries=/usr/share/prometheus/console_libraries -web.console.templates=/usr/share/prometheus/consoles -storage.local.path=/var/lib/prometheus/data"
+ARGS="-config.file=/etc/prometheus/prometheus.yaml -alertmanager.url=http://localhost:9093 -web.console.libraries=/usr/share/prometheus/console_libraries -web.console.templates=/usr/share/prometheus/consoles -storage.local.path=/var/lib/prometheus/data"
