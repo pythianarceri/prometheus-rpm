@@ -1,0 +1,12 @@
+[Unit]
+Description=Prometheus blackbox exporter
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/blackbox_exporter
+User=prometheus
+
+[Install]
+WantedBy=multi-user.target
+
+
