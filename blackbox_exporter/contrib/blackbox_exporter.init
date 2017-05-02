@@ -30,7 +30,7 @@ start() {
     exit 0
   fi
   if [ -n "$CONFIG_FILE" ] ; then
-    if [ -e $CONFIG_FILE ] ; then
+    if [ ! -e $CONFIG_FILE ] ; then
       touch $CONFIG_FILE
       ARGS="-config.file=$CONFIG_FILE"
     fi
