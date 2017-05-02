@@ -1,1 +1,2 @@
+CONFIG_FILE="/etc/prometheus/blackbox.yaml"
 ARGS=""

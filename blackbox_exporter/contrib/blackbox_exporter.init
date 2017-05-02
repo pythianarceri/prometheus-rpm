@@ -29,7 +29,14 @@ start() {
     echo "blackbox_exporter is already running"
     exit 0
   fi
-
+  if [ -n "$CONFIG_FILE" ] ; then
+    if [ -e $CONFIG_FILE ] ; then
+      touch $CONFIG_FILE
+      ARGS="-config.file=$CONFIG_FILE"
+    fi
+    else
+  ARGS="-config.file=/etc/blackbox.yaml"
+  fi
   echo -n $"Starting blackbox_exporter: "
   daemonize -u ${DAEMON_USER} -p ${PID_FILE} -l ${LOCK_FILE} -a -e ${LOG_FILE} -o ${LOG_FILE} ${DAEMON} ${ARGS}
   RETVAL=$?
